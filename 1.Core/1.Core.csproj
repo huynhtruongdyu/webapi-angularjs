@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Domain\Log.cs" />
+    <Compile Include="Domain\Order.cs" />
+    <Compile Include="Domain\OrderDetail.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\ProductCategory.cs" />
     <Compile Include="Domain\User.cs" />
