@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,7 +13,7 @@ namespace _1.Core.Domain
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(250)]
+        [MaxLength(50)]
         [Column(TypeName = "VARCHAR")]
         public string Password { get; set; }
 
@@ -25,5 +26,7 @@ namespace _1.Core.Domain
 
         [DefaultValue(false)]
         public bool IsStaff { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
