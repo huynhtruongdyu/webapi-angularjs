@@ -9,7 +9,7 @@ namespace _2.Data.Mapping
         {
             ToTable("User");
             HasKey(x => x.Id);
-            HasMany(x => x.Orders).WithOptional(x => x.User).HasForeignKey(x => x.Id);
+            HasMany(x => x.Orders).WithOptional(x => x.User).HasForeignKey(x => x.UserId);
         }
     }
 }

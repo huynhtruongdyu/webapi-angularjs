@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,7 +7,8 @@ namespace _1.Core.Domain
 {
     public class Order : BaseEntity
     {
-        public string UserId { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
 
         [Required]
         [MaxLength(250)]
@@ -24,7 +26,11 @@ namespace _1.Core.Domain
         [Required]
         public string Phone { get; set; }
 
+        [DefaultValue(0)]
         public decimal Total { get; set; }
+
+        [DefaultValue(true)]
+        public bool IsActive { get; set; }
 
         public virtual User User { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

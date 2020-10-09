@@ -10,6 +10,7 @@ namespace _2.Data.Mapping
             ToTable("Order");
             HasKey(x => x.Id);
             HasOptional(x => x.User).WithMany(x => x.Orders).HasForeignKey(x => x.UserId);
+            HasMany(x => x.OrderDetails).WithRequired(x => x.Order).HasForeignKey(x => x.OrderId);
         }
     }
 }
