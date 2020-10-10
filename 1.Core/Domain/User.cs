@@ -27,6 +27,5 @@ namespace _1.Core.Domain
         [DefaultValue(false)]
         public bool IsStaff { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
     }
 }

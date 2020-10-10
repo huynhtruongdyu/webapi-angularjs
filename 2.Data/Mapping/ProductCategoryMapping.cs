@@ -9,7 +9,6 @@ namespace _2.Data.Mapping
         {
             ToTable("ProductCategory");
             HasKey(x => x.Id);
-            HasMany(x => x.Products).WithRequired(x => x.ProductCategory).HasForeignKey(x => x.Id);
         }
     }
 }
