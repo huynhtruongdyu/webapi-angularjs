@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,6 +25,5 @@ namespace _1.Core.Domain
 
         [DefaultValue(false)]
         public bool IsStaff { get; set; }
-
     }
 }

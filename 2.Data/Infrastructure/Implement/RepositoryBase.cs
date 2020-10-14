@@ -7,7 +7,6 @@ using System.Linq.Expressions;
 
 namespace _2.Data.Infrastructure.Implement
 {
-
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
         #region properties
@@ -81,7 +80,7 @@ namespace _2.Data.Infrastructure.Implement
             return this.dbSet.Count(where);
         }
 
-        public IEnumerable<T> GetAll(string[] includes = null)
+        public virtual IEnumerable<T> GetAll(string[] includes = null)
         {
             //Handle includes for associated objects if aplicable
             if (includes != null && includes.Count() > 0)
@@ -94,11 +93,11 @@ namespace _2.Data.Infrastructure.Implement
             return this.myDbContext.Set<T>().AsQueryable();
         }
 
-        public IEnumerable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null)
+        public virtual IEnumerable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null)
         {
             int skipCount = index * size;
             IQueryable<T> _resetSet;
-            if(includes!=null && includes.Count() > 0)
+            if (includes != null && includes.Count() > 0)
             {
                 var query = this.myDbContext.Set<T>().Include(includes.First());
                 foreach (var include in includes.Skip(1))
@@ -112,7 +111,7 @@ namespace _2.Data.Infrastructure.Implement
             return _resetSet.AsQueryable();
         }
 
-        public T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null)
+        public virtual T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null)
         {
             if (includes != null && includes.Count() > 0)
             {
@@ -134,7 +133,7 @@ namespace _2.Data.Infrastructure.Implement
             return this.dbSet.Where(where).ToList();
         }
 
-        public IEnumerable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null)
+        public virtual IEnumerable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null)
         {
             if (includes != null && includes.Count() > 0)
             {

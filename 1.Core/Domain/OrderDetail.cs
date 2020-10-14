@@ -6,8 +6,10 @@ namespace _1.Core.Domain
     {
         [ForeignKey("Order")]
         public int OrderId { get; set; }
+
         [ForeignKey("Product")]
         public int ProductId { get; set; }
+
         public int Amount { get; set; }
         public decimal Total { get; set; }
 

@@ -1,5 +1,4 @@
-﻿using _1.Core.Domain;
-using _2.Data.Mapping;
+﻿using _2.Data.Mapping;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
