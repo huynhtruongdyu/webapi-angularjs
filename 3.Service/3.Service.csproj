@@ -41,7 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessService\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\0.Common\0.Common.csproj">
+      <Project>{e725c23f-5077-42e3-b40c-7fda1107a451}</Project>
+      <Name>0.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\1.Core\1.Core.csproj">
+      <Project>{07FE0C25-2474-49A5-9F2A-8D0E8DDD2614}</Project>
+      <Name>1.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2.Data\2.Data.csproj">
+      <Project>{84de141a-1e70-4b56-b4e8-59665dc9fb76}</Project>
+      <Name>2.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,7 +4,7 @@ using _2.Data.Infrastructure.Interface;
 
 namespace _2.Data.Repository
 {
-    internal interface IProductRepository
+    public interface IProductRepository : IRepository<Product>
     {
     }
 
