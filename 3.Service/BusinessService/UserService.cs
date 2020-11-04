@@ -69,7 +69,7 @@ namespace _3.Service.BusinessService
 
         public void Update(User user)
         {
-            
+            _userRepository.Update(user);
         }
     }
 }

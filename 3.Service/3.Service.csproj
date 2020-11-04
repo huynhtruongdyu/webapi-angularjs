@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessService\OrderDetailService.cs" />
+    <Compile Include="BusinessService\OrderService.cs" />
+    <Compile Include="BusinessService\ProductService.cs" />
+    <Compile Include="BusinessService\ProductCategoryService.cs" />
     <Compile Include="BusinessService\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
